@@ -16,6 +16,33 @@ public class CustomerServiceApplication {
 		SpringApplication.run(CustomerServiceApplication.class, args);
 	}
 
+	@Bean
+	CommandLineRunner commandLineRunner(CustomerRepository customerRepository){
+		return args -> {
+			customerRepository.save(
+					Customer.builder()
+							.name("nisrine").email("nisrine2003@gmail.com")
+							.build());
+			customerRepository.save(
+					Customer.builder()
+							.name("aya").email("aya2009@gmail.com")
+							.build());
+			customerRepository.save(
+					Customer.builder()
+							.name("mohammed").email("mohammed2011@gmail.com")
+							.build());
+			customerRepository.findAll().forEach(r ->{
+				System.out.println("===================");
+				System.out.println(r.getId());
+				System.out.println(r.getName());
+				System.out.println(r.getEmail());
+				System.out.println("===================");
+			});
+
+		};
+	}
+
+
 
 
 }
