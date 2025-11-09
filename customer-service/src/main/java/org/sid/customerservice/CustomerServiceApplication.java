@@ -15,7 +15,6 @@ public class CustomerServiceApplication {
 
 		SpringApplication.run(CustomerServiceApplication.class, args);
 	}
-
 	@Bean
 	CommandLineRunner commandLineRunner(CustomerRepository customerRepository){
 		return args -> {
@@ -41,8 +40,5 @@ public class CustomerServiceApplication {
 
 		};
 	}
-
-
-
 
 }

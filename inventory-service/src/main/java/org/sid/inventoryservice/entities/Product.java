@@ -10,6 +10,6 @@ public class Product {
     @Id
     private String id;
     private String name;
-    private double price;
+    private double unitPrice;
     private int quantity;
 }
